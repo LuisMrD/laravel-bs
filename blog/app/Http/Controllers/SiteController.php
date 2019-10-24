@@ -11,6 +11,11 @@ class SiteController extends Controller
         return view('site.index');
     }
 
+    public function login(){
+
+        return view('site.login');
+    }
+
     public function calendario(){
 
         return view('site.calendario');

@@ -23,7 +23,7 @@ class CreateRankingLeaguesTable extends Migration
 
             $table->foreign('player_id')
                 ->references('id')
-                ->on('players');    
+                ->on('players');
         });
     }
 

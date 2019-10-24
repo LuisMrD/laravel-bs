@@ -19,6 +19,7 @@ Route::get('/home', 'SiteController@index');
 Route::get('/calendario', 'SiteController@calendario');
 Route::get('/formatos', 'SiteController@formatos');
 Route::get('/links', 'SiteController@links');
+Route::get('/login', 'SiteController@login');
 
 Route::get('/listas', 'ListasController@index');
 Route::post('/listas/add', 'ListasController@add');

@@ -19234,6 +19234,24 @@ module.exports = function(module) {
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+/**
+ * Next, we will create a fresh Vue application instance and attach it to
+ * the page. Then, you may begin adding components to this application
+ * or customize the JavaScript scaffolding to fit your unique needs.
+ */
+
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    adm: false
+  },
+  methods: {
+    selectUserType: function selectUserType() {
+      this.adm = !this.adm;
+    }
+  }
+});
 
 /***/ }),
 
@@ -19287,8 +19305,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\LuisMrD\Desktop\laravel-bs\blog\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\LuisMrD\Desktop\laravel-bs\blog\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/vagrant/code/cursos/laravel-bs/blog/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/vagrant/code/cursos/laravel-bs/blog/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
