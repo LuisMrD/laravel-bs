@@ -16,6 +16,14 @@ class CreateAdmLeaguesTable extends Migration
         Schema::create('adm_leagues', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
+
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users');
+
+            $table->foreign('league_id')
+                ->references('id')
+                ->on('leagues');
         });
     }
 

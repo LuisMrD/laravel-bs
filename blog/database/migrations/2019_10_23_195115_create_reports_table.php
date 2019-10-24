@@ -16,6 +16,11 @@ class CreateReportsTable extends Migration
         Schema::create('reports', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
+            $table->integer('topcut');
+
+            $table->foreign('event_id')
+                ->references('id')
+                ->on('events');
         });
     }
 

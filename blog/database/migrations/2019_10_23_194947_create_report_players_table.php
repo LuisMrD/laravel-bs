@@ -16,6 +16,15 @@ class CreateReportPlayersTable extends Migration
         Schema::create('report_players', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
+            $table->int('position');
+
+            $table->foreign('report_id')
+                ->references('id')
+                ->on('reports');
+
+            $table->foreign('player_id')
+                ->references('id')
+                ->on('players');
         });
     }
 

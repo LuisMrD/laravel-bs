@@ -20,4 +20,9 @@ class SiteController extends Controller
 
         return view('site.formatos');
     }
+
+    public function links(){
+
+        return view('site.links');
+    }
 }

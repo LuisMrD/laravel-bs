@@ -16,6 +16,14 @@ class CreateRankingLeaguesTable extends Migration
         Schema::create('ranking_leagues', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
+
+            $table->foreign('ranking_id')
+                ->references('id')
+                ->on('rankings');
+
+            $table->foreign('player_id')
+                ->references('id')
+                ->on('players');    
         });
     }
 
