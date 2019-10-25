@@ -1,5 +1,5 @@
 require('./bootstrap');
-
+window.Vue = require('vue');
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -12,7 +12,7 @@ const app = new Vue({
         adm: false
     },
     methods:{
-        selectUserType: function selectUserType(){
+        selectUserType: function(){
             this.adm = !this.adm;
         }
     }
