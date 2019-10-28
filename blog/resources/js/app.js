@@ -14,7 +14,7 @@ const app = new Vue({
     methods:{
         selectUserType: function(){
             this.adm = !this.adm;
-            this.$refs.district.focus();
+            this.$refs.district.$el.focus();
         }
     }
 });
