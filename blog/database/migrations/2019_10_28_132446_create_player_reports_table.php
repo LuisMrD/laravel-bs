@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateReportsTable extends Migration
+class CreatePlayerReportsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,18 @@ class CreateReportsTable extends Migration
      */
     public function up()
     {
-        Schema::create('reports', function (Blueprint $table) {
+        Schema::create('player_reports', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
+            $table->integer('colocacao');
+
+            $table->foreign('player_id')
+            ->references('id')
+            ->on('players');
+
+            $table->foreign('report_id')
+            ->references('id')
+            ->on('reports');
         });
     }
 
@@ -26,6 +35,6 @@ class CreateReportsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('reports');
+        Schema::dropIfExists('player_reports');
     }
 }

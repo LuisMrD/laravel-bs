@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRankingLeaguesTable extends Migration
+class CreatePostsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,12 @@ class CreateRankingLeaguesTable extends Migration
      */
     public function up()
     {
-        Schema::create('ranking_leagues', function (Blueprint $table) {
+        Schema::create('posts', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-
-            $table->foreign('ranking_id')
-                ->references('id')
-                ->on('rankings');
-
-            $table->foreign('player_id')
-                ->references('id')
-                ->on('players');
+            $table->string('nome');
+            $table->string('autor');
+            $table->string('conteudo');
         });
     }
 
@@ -34,6 +29,6 @@ class CreateRankingLeaguesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ranking_leagues');
+        Schema::dropIfExists('posts');
     }
 }
