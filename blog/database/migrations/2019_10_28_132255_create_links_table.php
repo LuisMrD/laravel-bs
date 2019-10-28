@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateReportPlayersTable extends Migration
+class CreateLinksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class CreateReportPlayersTable extends Migration
      */
     public function up()
     {
-        Schema::create('report_players', function (Blueprint $table) {
-            $table->bigIncrements('id');
+        Schema::create('links', function (Blueprint $table) {
+            $table->increments('id');
             $table->timestamps();
+            $table->string('nome');
+            $table->string('endereco');
         });
     }
 
@@ -26,6 +28,6 @@ class CreateReportPlayersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('report_players');
+        Schema::dropIfExists('links');
     }
 }

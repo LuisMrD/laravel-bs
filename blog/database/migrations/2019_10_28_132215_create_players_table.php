@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAdmLeaguesTable extends Migration
+class CreatePlayersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class CreateAdmLeaguesTable extends Migration
      */
     public function up()
     {
-        Schema::create('adm_leagues', function (Blueprint $table) {
-            $table->bigIncrements('id');
+        Schema::create('players', function (Blueprint $table) {
+            $table->increments('id');
             $table->timestamps();
+            $table->string('nome');
+            $table->integer('pontos');
         });
     }
 
@@ -26,6 +28,6 @@ class CreateAdmLeaguesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('adm_leagues');
+        Schema::dropIfExists('players');
     }
 }
