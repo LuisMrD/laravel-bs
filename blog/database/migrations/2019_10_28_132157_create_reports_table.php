@@ -14,10 +14,10 @@ class CreateReportsTable extends Migration
     public function up()
     {
         Schema::create('reports', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->timestamps();
             $table->integer('inscricoes');
-            $table->integer('event_id');
+            $table->unsignedBigInteger('event_id');
 
             $table->foreign('event_id')
             ->references('id')

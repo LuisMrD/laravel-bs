@@ -14,10 +14,10 @@ class CreateLeagueUsersTable extends Migration
     public function up()
     {
         Schema::create('league_users', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->timestamps();
-            $table->integer('league_id');
-            $table->integer('user_id');
+            $table->unsignedBigInteger('league_id');
+            $table->unsignedBigInteger('user_id');
 
             $table->foreign('league_id')
             ->references('id')

@@ -14,7 +14,7 @@ class CreateEventsTable extends Migration
     public function up()
     {
         Schema::create('events', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->timestamps();
             $table->integer('data');
             $table->integer('hora');
@@ -22,11 +22,12 @@ class CreateEventsTable extends Migration
             $table->integer('numero');
             $table->string('cidade');
             $table->string('estado');
-            $table->integer('league_id');
+            $table->unsignedBigInteger('league_id');
 
             $table->foreign('league_id')
             ->references('id')
-            ->on('leagues');
+            ->on('leagues')
+            ->onDelete('cascade');
         });
     }
 
