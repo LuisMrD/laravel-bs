@@ -18,7 +18,7 @@ class CreateLeaguesTable extends Migration
             $table->timestamps();
             $table->string('nome');
             $table->string('cidade');
-            $table->string('estado');
+            $table->integer('estado');
         });
     }
 
