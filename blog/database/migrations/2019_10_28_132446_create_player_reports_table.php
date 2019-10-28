@@ -17,6 +17,8 @@ class CreatePlayerReportsTable extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
             $table->integer('colocacao');
+            $table->integer('player_id');
+            $table->integer('report_id');
 
             $table->foreign('player_id')
             ->references('id')

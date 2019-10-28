@@ -17,6 +17,7 @@ class CreateReportsTable extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
             $table->integer('inscricoes');
+            $table->integer('event_id');
 
             $table->foreign('event_id')
             ->references('id')

@@ -16,6 +16,8 @@ class CreateLeagueUsersTable extends Migration
         Schema::create('league_users', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
+            $table->integer('league_id');
+            $table->integer('user_id');
 
             $table->foreign('league_id')
             ->references('id')

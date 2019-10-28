@@ -16,6 +16,8 @@ class CreateRankingPlayersTable extends Migration
         Schema::create('ranking_players', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
+            $table->integer('ranking_id');
+            $table->integer('player_id');
 
             $table->foreign('ranking_id')
             ->references('id')

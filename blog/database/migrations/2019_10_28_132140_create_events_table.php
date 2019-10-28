@@ -22,6 +22,7 @@ class CreateEventsTable extends Migration
             $table->integer('numero');
             $table->string('cidade');
             $table->string('estado');
+            $table->integer('league_id');
 
             $table->foreign('league_id')
             ->references('id')
