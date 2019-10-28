@@ -14,7 +14,7 @@ class CreateRankingLeaguesTable extends Migration
     public function up()
     {
         Schema::create('ranking_leagues', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->timestamps();
             $table->integer('ranking_id');
             $table->integer('league_id');

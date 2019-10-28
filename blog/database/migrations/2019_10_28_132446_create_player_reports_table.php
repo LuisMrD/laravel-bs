@@ -14,7 +14,7 @@ class CreatePlayerReportsTable extends Migration
     public function up()
     {
         Schema::create('player_reports', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->timestamps();
             $table->integer('colocacao');
             $table->integer('player_id');

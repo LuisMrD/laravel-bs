@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Report extends Model
 {
     //
-    public function evento(){
+    public function event(){
 
         return $this->belongsTo(Event::class);
     }

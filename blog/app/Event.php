@@ -15,7 +15,7 @@ class Event extends Model
         'estado'
     ];
 
-    public function liga(){
+    public function league(){
 
         return $this->belongsTo(League::class);
     }
