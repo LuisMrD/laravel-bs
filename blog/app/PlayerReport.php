@@ -2,9 +2,10 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\Pivot;
 
-class PlayerReport extends Model
+class PlayerReport extends Pivot
 {
     //
+    protected $fillable = [ 'colocacao' ];
 }
