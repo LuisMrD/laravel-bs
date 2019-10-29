@@ -24,18 +24,18 @@ class SiteController extends Controller
 
             return redirect('index');
         }
-
+        
         $user = User::create([
             'nome' => $request->nome,
             'email' => $request->email,
-            'telefone' => $request->telefone,
-            'acesso' => $request->acesso,
-            'status' => 0
+            'celular' => $request->celular,
+            'acesso' => $request->UserType,
+            'status' => $request->statusadm
         ]);
 
         $league = League::create([
             'nome' => $request->nomeliga,
-            'cidade' => $request->cidade,
+            'cidade' => $request->cidadeliga,
             'estado' => $request->estado
         ]);
 

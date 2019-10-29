@@ -8,7 +8,7 @@ class League extends Model
 {
     protected $fillable = [
         'nome',
-        'ciade',
+        'cidade',
         'estado'
     ];
     //
