@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('email');
             $table->integer('celular');
             $table->integer('acesso');
-            $table->integer('status');
+            $table->integer('status')->default(App\Enums\UserStatus::INACTIVE);
         });
     }
 

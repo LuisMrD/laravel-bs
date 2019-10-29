@@ -22,6 +22,14 @@ class SiteController extends Controller
 
         if($request->userType === 0){
 
+            $user = User::create([
+                'nome' => $request->nome,
+                'email' => $request->email,
+                'celular' => $request->celular,
+                'acesso' => $request->UserType,
+                'status' => $request->statusplayer
+            ]);
+
             return redirect('index');
         }
         
