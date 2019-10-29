@@ -19,15 +19,14 @@ class SiteController extends Controller
     }
 
     public function store(Request $request){
-
-        if($request->userType === 0){
+        
+        if($request->UserType == 0){
 
             $user = User::create([
                 'nome' => $request->nome,
                 'email' => $request->email,
                 'celular' => $request->celular,
-                'acesso' => $request->UserType,
-                'status' => $request->statusplayer
+                'acesso' => $request->UserType
             ]);
 
             return redirect('index');
@@ -37,8 +36,7 @@ class SiteController extends Controller
             'nome' => $request->nome,
             'email' => $request->email,
             'celular' => $request->celular,
-            'acesso' => $request->UserType,
-            'status' => $request->statusadm
+            'acesso' => $request->UserType
         ]);
 
         $league = League::create([

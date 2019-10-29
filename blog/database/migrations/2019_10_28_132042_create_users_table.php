@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
             $table->timestamps();
             $table->string('nome');
             $table->string('email');
-            $table->integer('celular');
+            $table->bigInteger('celular');
             $table->integer('acesso');
             $table->integer('status')->default(App\Enums\UserStatus::INACTIVE);
         });
