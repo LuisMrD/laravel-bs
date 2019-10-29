@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class SiteController extends Controller
 {
-    public function index(){
+    public function index(){        
 
         return view('site.index');
     }
@@ -19,7 +19,7 @@ class SiteController extends Controller
     }
 
     public function store(Request $request){
-        
+
         if($request->UserType == 0){
 
             $user = User::create([
@@ -29,7 +29,7 @@ class SiteController extends Controller
                 'acesso' => $request->UserType
             ]);
 
-            return redirect('index');
+            return redirect('home');
         }
         
         $user = User::create([
@@ -45,12 +45,14 @@ class SiteController extends Controller
             'estado' => $request->estado
         ]);
 
-        return view('site.index');
+        return redirect('home');
     }
 
     public function calendario(){
 
-        return view('site.calendario');
+        $leagues = League::all();
+
+        return view('site.calendario', compact('leagues'));
     }
 
     public function formatos(){
