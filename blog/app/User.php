@@ -11,6 +11,7 @@ class User extends Model
         'nome',
         'email',
         'celular',
-        'acesso'
+        'acesso',
+        'status'
     ];
 }
