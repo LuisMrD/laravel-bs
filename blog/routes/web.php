@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', 'SiteController@index')->name('home');
+Route::get('/index', 'SiteController@index')->name('index');
 Route::get('/calendario', 'SiteController@calendario');
 Route::get('/formatos', 'SiteController@formatos');
 Route::get('/links', 'SiteController@links');
