@@ -34,3 +34,6 @@ Route::post('/ranking/add', 'RankingController@add');
 
 Route::get('/reports', 'ReportsController@index');
 Route::post('/reports/add', 'ReportsController@add');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
