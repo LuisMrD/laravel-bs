@@ -31488,6 +31488,7 @@ var app = new Vue({
   methods: {
     selectUserType: function selectUserType() {
       this.adm = !this.adm;
+      this.$refs.district.$el.focus();
     }
   }
 });

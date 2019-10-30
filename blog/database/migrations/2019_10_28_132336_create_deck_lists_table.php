@@ -14,7 +14,7 @@ class CreateDeckListsTable extends Migration
     public function up()
     {
         Schema::create('deck_lists', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->timestamps();
             $table->string('nome');
             $table->string('autor');

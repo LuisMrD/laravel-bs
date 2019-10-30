@@ -14,11 +14,11 @@ class CreatePlayerReportsTable extends Migration
     public function up()
     {
         Schema::create('player_reports', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->timestamps();
             $table->integer('colocacao');
-            $table->integer('player_id');
-            $table->integer('report_id');
+            $table->unsignedBigInteger('player_id');
+            $table->unsignedBigInteger('report_id');
 
             $table->foreign('player_id')
             ->references('id')

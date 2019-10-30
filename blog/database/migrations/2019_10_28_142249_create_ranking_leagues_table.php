@@ -14,10 +14,10 @@ class CreateRankingLeaguesTable extends Migration
     public function up()
     {
         Schema::create('ranking_leagues', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->timestamps();
-            $table->integer('ranking_id');
-            $table->integer('league_id');
+            $table->unsignedBigInteger('ranking_id');
+            $table->unsignedBigInteger('league_id');
 
             $table->foreign('ranking_id')
             ->references('id')

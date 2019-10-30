@@ -15,11 +15,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', 'SiteController@index');
+Route::get('/home', 'SiteController@index')->name('home');
 Route::get('/calendario', 'SiteController@calendario');
 Route::get('/formatos', 'SiteController@formatos');
 Route::get('/links', 'SiteController@links');
+
 Route::get('/login', 'SiteController@login');
+Route::post('/login/cadastrar', 'SiteController@store');
 
 Route::get('/listas', 'ListasController@index');
 Route::post('/listas/add', 'ListasController@add');
