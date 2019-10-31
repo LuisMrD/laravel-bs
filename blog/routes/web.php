@@ -20,7 +20,7 @@ Route::get('/calendario', 'SiteController@calendario');
 Route::get('/formatos', 'SiteController@formatos');
 Route::get('/links', 'SiteController@links');
 
-Route::get('/login', 'SiteController@login');
+Route::get('/pass', 'SiteController@login');
 Route::post('/login/cadastrar', 'SiteController@store');
 
 Route::get('/listas', 'ListasController@index');

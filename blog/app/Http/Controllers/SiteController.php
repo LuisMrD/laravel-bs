@@ -31,7 +31,7 @@ class SiteController extends Controller
 
             return redirect('home');
         }
-        
+
         $user = User::create([
             'nome' => $request->nome,
             'email' => $request->email,

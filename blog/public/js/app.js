@@ -49369,7 +49369,16 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
  */
 
 var app = new Vue({
-  el: '#app'
+  el: '#app',
+  data: {
+    adm: false
+  },
+  methods: {
+    selectUserType: function selectUserType() {
+      this.adm = !this.adm;
+      this.$refs.district.$el.focus();
+    }
+  }
 });
 
 /***/ }),

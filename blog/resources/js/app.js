@@ -29,4 +29,13 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 
 const app = new Vue({
     el: '#app',
+    data: {
+        adm: false
+    },
+    methods:{
+        selectUserType: function(){
+            this.adm = !this.adm;
+            this.$refs.district.$el.focus();
+        }
+    }
 });
