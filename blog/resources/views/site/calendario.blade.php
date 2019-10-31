@@ -6,7 +6,7 @@
 
 <ul class="">
     @foreach($leagues as $league)
-    <li class="">{{$league->nome}}</li>
+    <li class="">{{$league->name}}</li>
     @endforeach
 </ul>
 

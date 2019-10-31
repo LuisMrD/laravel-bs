@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\User as UserModel;
 use App\League;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class SiteController extends Controller
 {
@@ -48,11 +50,15 @@ class SiteController extends Controller
         return redirect('home');
     }
 
-    public function calendario(){
+    public function calendario(UserModel $userModel){
 
         $leagues = League::all();
-
-        return view('site.calendario', compact('leagues'));
+        // $user = Auth::id();
+        $userModel = $userModel->find(Auth::id());
+        
+        $leagueUser = $userModel->leagues();
+        dd($leagueUser);
+        return view('site.calendario', compact('leagues','user'));
     }
 
     public function formatos(){

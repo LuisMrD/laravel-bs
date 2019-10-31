@@ -12,8 +12,12 @@ class League extends Model
         'district'
     ];
     //
-    public function users(){
+    // public function users(){
 
-        return $this->belongsToMany(User::class)->using(LeagueUser::class);
+    //     return $this->belongsToMany(User::class)->using(LeagueUser::class);
+    // }
+    public function users()
+    {
+        return $this->hasManyThrough('App\User', 'App\LeagueUser');
     }
 }
