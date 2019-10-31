@@ -16,8 +16,8 @@ class CreateLinksTable extends Migration
         Schema::create('links', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->string('nome');
-            $table->string('endereco');
+            $table->string('name');
+            $table->string('address');
         });
     }
 

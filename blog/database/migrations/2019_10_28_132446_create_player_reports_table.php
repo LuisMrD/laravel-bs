@@ -16,7 +16,7 @@ class CreatePlayerReportsTable extends Migration
         Schema::create('player_reports', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->integer('colocacao');
+            $table->integer('position');
             $table->unsignedBigInteger('player_id');
             $table->unsignedBigInteger('report_id');
 

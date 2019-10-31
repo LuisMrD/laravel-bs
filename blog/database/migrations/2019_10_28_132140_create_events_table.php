@@ -16,12 +16,12 @@ class CreateEventsTable extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->integer('data');
-            $table->integer('hora');
-            $table->string('rua');
-            $table->integer('numero');
-            $table->string('cidade');
-            $table->string('estado');
+            $table->integer('date');
+            $table->integer('hour');
+            $table->string('street');
+            $table->integer('number');
+            $table->string('city');
+            $table->string('district');
             $table->unsignedBigInteger('league_id');
 
             $table->foreign('league_id')

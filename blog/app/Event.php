@@ -7,12 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class Event extends Model
 {
     protected $fillable = [
-        'data',
-        'hora',
-        'rua',
-        'numero',
-        'cidade',
-        'estado'
+        'date',
+        'hour',
+        'street',
+        'number',
+        'city',
+        'district'
     ];
 
     public function league(){

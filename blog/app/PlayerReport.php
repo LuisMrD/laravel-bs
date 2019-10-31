@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Relations\Pivot;
 class PlayerReport extends Pivot
 {
     //
-    protected $fillable = [ 'colocacao' ];
+    protected $fillable = [ 'position' ];
 }

@@ -8,7 +8,7 @@ class Link extends Model
 {
     //
     protected $fillable = [
-        'nome',
-        'endereco'
+        'name',
+        'address'
     ];
 }

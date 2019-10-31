@@ -16,9 +16,9 @@ class CreateLeaguesTable extends Migration
         Schema::create('leagues', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->string('nome');
-            $table->string('cidade');
-            $table->integer('estado');
+            $table->string('name');
+            $table->string('city');
+            $table->integer('district');
         });
     }
 

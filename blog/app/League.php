@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class League extends Model
 {
     protected $fillable = [
-        'nome',
-        'cidade',
-        'estado'
+        'name',
+        'city',
+        'district'
     ];
     //
     public function users(){

@@ -5,67 +5,56 @@
   <form class="w-full max-w-sm" method="POST" action="{{ route('register') }}">
     @csrf
     <div class="md:flex md:items-center mb-6 mt-24">
-      <div class="md:w-1/3">        
-        <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="name">{{ __('Name') }}</label>
+      <div class="md:w-1/3">
+        <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="name">
           Nome
         </label>
       </div>
-      <div class="md:w-2/3">        
-        <input id="name" type="text"  name="name" value="{{ old('name') }}" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" required autocomplete="name" autofocus>
-      </div>
+      <div class="md:w-2/3">
+        <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="name" name="name" type="text" required>
+
         @error('name')
-            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
-                <strong class="font-bold">Holy smokes!</strong>
-                <span class="block sm:inline" role="alert">{{ $message }}</span>
-                <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
-                    <svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Close</title><path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/></svg>
-                </span>
-            </div>
+          <span class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+          </span>
         @enderror
+      </div>
     </div>
     <div class="md:flex md:items-center mb-6">
       <div class="md:w-1/3">
-        <label for="email" class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4">{{ __('E-Mail Address') }}</label>        
+        <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="email">
+          Email
+        </label>
       </div>
       <div class="md:w-2/3">
-      <input id="email" type="email" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" name="email" value="{{ old('email') }}" required autocomplete="email">
+        <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="email" name="email" type="text" required>
+
         @error('email')
-            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
-                <strong class="font-bold">Holy smokes!</strong>
-                <span class="block sm:inline" role="alert">{{ $message }}</span>
-                <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
-                    <svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Close</title><path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/></svg>
-                </span>
-            </div>
+          <span class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+          </span>
         @enderror
       </div>
     </div>
     <div class="md:flex md:items-center mb-6">
       <div class="md:w-1/3">
-      <label for="celular" class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4">{{ __('Celular') }}</label>
-        
+        <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="phone">
+          Celular
+        </label>
       </div>
       <div class="md:w-2/3">
-      <input id="celular" type="text" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" name="celular" value="{{ old('celular') }}" required autocomplete="celular" autofocus>
-        @error('celular')
-            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
-                <strong class="font-bold">Holy smokes!</strong>
-                <span class="block sm:inline" role="alert">{{ $message }}</span>
-                <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
-                    <svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Close</title><path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/></svg>
-                </span>
-            </div>
-        @enderror  
+        <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="phone" name="phone" type="text" required>
       </div>
     </div>
     <div class="md:flex md:items-center mb-6">
       <div class="md:w-1/3">
-        <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+        <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="access">
           Alinhamento
         </label>
       </div>
+      <!-- <input type="hidden" id="access" name="access" value="0"> -->
       <div class="inline-block relative w-64">
-          <select id="acesso" name="acesso" @change="selectUserType()" class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded leading-tight focus:outline-none focus:shadow-outline">
+          <select id="access" name="access" @change="selectUserType()" class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded leading-tight focus:outline-none focus:shadow-outline" required>
               <option value="0">Jogador</option>
               <option value="1">Administrador</option>
           </select>
@@ -115,12 +104,28 @@
     </div>
     <div class="md:flex md:items-center mb-6">
       <div class="md:w-1/3">
-        <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-username">
+        <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="password">
           Password
         </label>
       </div>
       <div class="md:w-2/3">
-        <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-username" type="password" placeholder="******************">
+        <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="password" name="password" type="password" placeholder="******************" required>
+
+        @error('password')
+          <span class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+          </span>
+        @enderror
+      </div>
+    </div>
+    <div class="md:flex md:items-center mb-6">
+      <div class="md:w-1/3">
+        <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="password-confirm">
+          Confirm Password
+        </label>
+      </div>
+      <div class="md:w-2/3">
+        <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="password-confirm" type="password" name="password_confirmation" required autocomplete="new-password">
       </div>
     </div>
     <div class="md:flex md:items-center">
@@ -131,7 +136,7 @@
           </button>
         </div>
       </div>
-    </div>    
+    </div>
   </form>
 </div>
 @endsection

@@ -8,8 +8,8 @@ class Player extends Model
 {
     //
     protected $fillable = [
-        'nome',
-        'pontos'
+        'name',
+        'points'
     ];
 
     public function report(){

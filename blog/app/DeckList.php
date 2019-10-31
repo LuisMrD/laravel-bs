@@ -8,8 +8,8 @@ class DeckList extends Model
 {
     //
     protected $fillable = [
-        'nome',
-        'autor',
-        'lista'
+        'name',
+        'author',
+        'list'
     ];
 }

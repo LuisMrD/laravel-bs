@@ -18,8 +18,8 @@ class CreateUsersTable extends Migration
             $table->timestamps();
             $table->string('name');
             $table->string('email');
-            $table->bigInteger('celular');
-            $table->integer('acesso');
+            $table->bigInteger('phone');
+            $table->integer('access');
             $table->integer('status')->default(App\Enums\UserStatus::INACTIVE);
             $table->string('password', 255);
             $table->string('remember_token', 100)->nullable();
