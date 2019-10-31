@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\User;
+use App\League;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -63,6 +64,15 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        if($data['access'] == 1)
+        {
+            League::create([
+                'name' => $data['league-name'],
+                'city' => $data['league-city'],
+                'district' => $data['league-district']     
+            ]);
+        }
+
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
