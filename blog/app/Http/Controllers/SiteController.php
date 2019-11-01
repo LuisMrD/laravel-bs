@@ -77,10 +77,14 @@ class SiteController extends Controller
         return view('site.calendarioform', compact('leagues','userModel', 'leagueAdm'));
     }
 
-    public function eventos(){
+    public function eventos(Request $request){
 
-        return view('site.eventos');
+        $id = substr($request->path(), 8);
 
+        $league = League::where(['id' => $id]);
+        dd($league->name);
+
+        return view('site.eventos', compact('league'));
     }
 
     public function formatos(){
