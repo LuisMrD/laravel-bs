@@ -81,8 +81,8 @@ class SiteController extends Controller
 
         $id = substr($request->path(), 8);
 
-        $league = League::where(['id' => $id]);
-        dd($league->name);
+        $league = League::where(['id' => $id])->get();
+        dd($league);
 
         return view('site.eventos', compact('league'));
     }
