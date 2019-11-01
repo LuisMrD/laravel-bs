@@ -43,7 +43,7 @@ class User extends Authenticatable
 
     public function leagues()
     {
-        return $this->hasManyThrough('App\User', 'App\LeagueUser');
+        return $this->hasManyThrough('App\League', 'App\LeagueUser');
     }
 }
 

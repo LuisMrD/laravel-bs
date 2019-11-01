@@ -55,10 +55,32 @@ class SiteController extends Controller
         $leagues = League::all();
         // $user = Auth::id();
         $userModel = $userModel->find(Auth::id());
-        
-        $leagueUser = $userModel->leagues();
-        dd($leagueUser);
-        return view('site.calendario', compact('leagues','user'));
+        //$leagueAdm = $userModel->leagues()->where('id', '=', Auth::id());
+
+        return view('site.calendario', compact('leagues','userModel'));
+    }
+
+    public function calendarioform(UserModel $userModel){
+
+        $leagues = League::all();
+
+        $userModel = $userModel->find(Auth::id());
+
+        if (Auth::check()) {
+
+            $leagueAdm = $userModel->leagues()->where('id', '=', Auth::id());
+
+            return view('site.calendarioform', compact('leagues','userModel', 'leagueAdm'));
+        }
+        $leagueAdm = false;
+
+        return view('site.calendarioform', compact('leagues','userModel', 'leagueAdm'));
+    }
+
+    public function eventos(){
+
+        return view('site.eventos');
+
     }
 
     public function formatos(){

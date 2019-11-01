@@ -16,9 +16,13 @@ Route::get('/', function () {
 });
 
 Route::get('/index', 'SiteController@index')->name('index');
-Route::get('/calendario', 'SiteController@calendario');
 Route::get('/formatos', 'SiteController@formatos');
 Route::get('/links', 'SiteController@links');
+
+
+Route::get('/calendario', 'SiteController@calendario');
+Route::get('/calendario/{id}', 'SiteController@calendarioform');
+Route::get('/eventos/{id}', 'SiteController@eventos');
 
 Route::get('/pass', 'SiteController@login');
 Route::post('/login/cadastrar', 'SiteController@store');
