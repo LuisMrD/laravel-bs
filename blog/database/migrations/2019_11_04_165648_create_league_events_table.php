@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEventsTable extends Migration
+class CreateLeagueEventsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,24 +13,19 @@ class CreateEventsTable extends Migration
      */
     public function up()
     {
-        Schema::create('events', function (Blueprint $table) {
+        Schema::create('league_events', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->integer('date');
-            $table->integer('hour');
-            $table->integer('format');
-            $table->integer('type');
-            $table->integer('rule');
-            $table->string('street');
-            $table->integer('number');
-            $table->string('complement');
-            $table->string('city');
             $table->unsignedBigInteger('league_id');
+            $table->unsignedBigInteger('event_id');
 
             $table->foreign('league_id')
             ->references('id')
-            ->on('leagues')
-            ->onDelete('cascade');
+            ->on('leagues');
+
+            $table->foreign('event_id')
+            ->references('id')
+            ->on('events');
         });
     }
 
@@ -41,6 +36,6 @@ class CreateEventsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('events');
+        Schema::dropIfExists('league_events');
     }
 }

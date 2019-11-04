@@ -20,4 +20,9 @@ class League extends Model
     {
         return $this->hasManyThrough('App\User', 'App\LeagueUser');
     }
+
+    public function events()
+    {
+        return $this->hasManyThrough('App\Event', 'App\LeagueEvent');
+    }
 }

@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\User;
-use App\User as UserModel;
+use App\Event;
 use App\League;
+use App\User as UserModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -70,7 +71,11 @@ class SiteController extends Controller
 
             $leagueAdm = $userModel->leagues()->where('id', '=', Auth::id());
 
-            return view('site.calendarioform', compact('leagues','userModel', 'leagueAdm'));
+            $league = League::where(['id' => Auth::id()])->get();
+
+            //dd($league);
+
+            return view('site.calendarioform', compact('leagues','userModel', 'leagueAdm', 'league'));
         }
         $leagueAdm = false;
 
@@ -82,9 +87,11 @@ class SiteController extends Controller
         $id = substr($request->path(), 8);
 
         $league = League::where(['id' => $id])->get();
-        dd($league);
+        //dd($league);
 
-        return view('site.eventos', compact('league'));
+        $events = Event::where(['league_id' => $id])->get();
+
+        return view('site.eventos', compact('league','events'));
     }
 
     public function formatos(){

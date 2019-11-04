@@ -69,7 +69,7 @@ class RegisterController extends Controller
             League::create([
                 'name' => $data['league-name'],
                 'city' => $data['league-city'],
-                'district' => $data['league-district']     
+                'district' => $data['league-district']
             ]);
         }
 

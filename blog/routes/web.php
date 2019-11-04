@@ -21,7 +21,7 @@ Route::get('/links', 'SiteController@links');
 
 
 Route::get('/calendario', 'SiteController@calendario');
-Route::get('/calendario/{id}', 'SiteController@calendarioform');
+Route::get('/calendario/{id}', 'SiteController@calendarioform')->name('calendarioliga');
 Route::get('/eventos/{id}', 'SiteController@eventos');
 
 Route::get('/pass', 'SiteController@login');
@@ -37,7 +37,11 @@ Route::get('/ranking', 'RankingController@index');
 Route::post('/ranking/add', 'RankingController@add');
 
 Route::get('/reports', 'ReportsController@index');
+Route::get('/reports/edit/{id}', 'ReportsController@create');
 Route::post('/reports/add', 'ReportsController@add');
+
 Auth::routes();
+
+Route::post('/eventos/criar', 'EventController@store');
 
 Route::get('/home', 'HomeController@index')->name('home');

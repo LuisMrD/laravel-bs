@@ -30,7 +30,7 @@
             <a class="text-4xl font-sans font-bold text-white hover:text-4xl font-sans font-bold text-white" href="#">Posts</a>
           </li>
           <li class="mr-12">
-            <a class="text-4xl font-sans font-bold text-white hover:text-4xl font-sans font-bold text-white" href="#">Reports</a>
+            <a class="text-4xl font-sans font-bold text-white hover:text-4xl font-sans font-bold text-white" href="/reports">Reports</a>
           </li>
           <li class="mr-12">
             <a class="text-4xl font-sans font-bold text-white hover:text-4xl font-sans font-bold text-white" href="#">Ranking</a>
