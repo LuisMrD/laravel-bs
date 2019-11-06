@@ -12,12 +12,12 @@ use BenSampo\Enum\Enum;
 final class Format extends Enum
 {
     const Padrão = 8;
-    const Hordas = 0;
-    const Comuns = 5;
-    const Unipoder = 7;
-    const Estendido = 3;
-    const Afiliações = 6;
-    const Unleashed = 4;
-    const Commander = 2;
-    const Guerra_infinita = 1;
+    const Hordas = 7;
+    const Comuns = 6;
+    const Unipoder = 5;
+    const Estendido = 4;
+    const Afiliações = 3;
+    const Unleashed = 2;
+    const Commander = 1;
+    const Guerra_infinita = 0;
 }

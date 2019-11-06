@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\League;
+use App\Player;
 use App\User as UserModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -19,9 +20,11 @@ class ReportsController extends Controller
         return view('reports.index', compact('leagues','userModel'));
     }
 
-    public function create(UserModel $userModel){
+    public function add(UserModel $userModel){
 
-        $leagues = League::all();
+        $events = Event::all();
+
+        $players = Player:all();
 
         $userModel = $userModel->find(Auth::id());
 
@@ -29,14 +32,14 @@ class ReportsController extends Controller
 
             $leagueAdm = $userModel->leagues()->where('id', '=', Auth::id());
 
-            $league = League::where(['id' => Auth::id()])->get();
+            $event = Event::where(['league_id' => Auth::id()])->get();
 
             //dd($league);
 
-            return view('reports.add', compact('leagues','userModel', 'leagueAdm', 'league'));
+            return view('reports.add', compact('events','userModel', 'leagueAdm', 'event','players'));
         }
         $leagueAdm = false;
 
-        return view('reports.add', compact('leagues','userModel', 'leagueAdm'));
+        return view('reports.add', compact('events','userModel', 'leagueAdm'));
     }
 }

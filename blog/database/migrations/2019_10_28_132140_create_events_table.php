@@ -25,6 +25,7 @@ class CreateEventsTable extends Migration
             $table->integer('number');
             $table->string('complement');
             $table->string('city');
+            $table->integer('status')->default(App\Enums\EventStatus::OPEN);
             $table->unsignedBigInteger('league_id');
 
             $table->foreign('league_id')
